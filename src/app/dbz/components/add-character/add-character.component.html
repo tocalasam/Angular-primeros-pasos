@@ -1,0 +1,30 @@
+
+<!-- conectamos el evento con la funcion. -->
+<form class="row" (ngSubmit)="emitCharacter()">
+  <h4>Agregar personaje</h4>
+  <!--OJO:
+  (click)=evento y
+  [character.name]= atributo
+  caja de bananas: [()] evento y atributo al mismo tiempo
+
+  LOS INPUTS SE RECOGEN EN: add-character.component.ts
+  -->
+  <input
+    type="text"
+    [(ngModel)]="character.name"
+    name="name"
+    class="form-control mb-2"
+    placeholder="Nombre">
+
+  <input
+    type="number"
+    [(ngModel)]="character.power"
+    name="power"
+    class="form-control mb-2"
+    placeholder="Poder">
+
+  <button type="submit" class="btn btn-primary">
+    Agregar personaje
+  </button>
+  <pre> {{ character | json }}</pre>
+</form>

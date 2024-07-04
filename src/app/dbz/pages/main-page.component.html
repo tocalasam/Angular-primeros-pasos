@@ -1,0 +1,37 @@
+<h1>DBZ Main Page</h1>
+<hr>
+
+<div class="row">
+  <div class= "col">
+
+    <!--Cuando queremos mandar mediante inputs de padre al hicho usamos llaves [atributos]-->
+    <!-- 4. enviamos el numero al main.page.component.ts para inicial el borrado-->
+    <!-- 4.1 Ahora la informacion, en vez de conectar main.page.component.ts, concetamos con el servicio-->
+    <!-- CUANDO EL CONSTRUCTOR DE SERVICIO ES PUBLIC
+         <dbz-list (onDeleteCharacterById)="dbzService.onDeleteCharacter($event)"
+        [characterList]="dbzService.characters"></dbz-list>
+      </div>
+    -->
+
+    <!-- CUANDO EL CONSTRUCTOR DE SERVICIO ES PRIVADO  html->ts->service -->
+    <dbz-list (onDeleteCharacterById)="onDeleteCharacter($event)"
+     [characterList]="characters"></dbz-list>
+  </div>
+
+
+
+
+  <div class="col">
+    <!--Cuando queremos escuchar el evento mediante outputs de padre al hicho usamos parentesis (eventos)
+      el onNewCharacter (add-character.ts)
+      es recogido y se envia al main-page.componet.ts
+      -->
+    <!-- Ahora, en vez de conectar main.page.component.ts, concetamos con el servicio-->
+     <!-- CUANDO EL CONSTRUCTOR DE SERVICIO ES PUBLIC
+         <dbz-add-character (onNewCharacter)="dbzService.onNewCharacter($event)"></dbz-add-character>
+    -->
+
+     <!-- CUANDO EL CONSTRUCTOR DE SERVICIO ES PRIVADO  html->ts->service -->
+    <dbz-add-character (onNewCharacter)="onNewCharacter($event)"></dbz-add-character>
+  </div>
+</div>
